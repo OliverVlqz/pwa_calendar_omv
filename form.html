@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Formulario - PWA Calendario" />
+    <meta name="theme-color" content="#000047" />
+    <title>Formulario - PWA Calendario</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./main.css" />
+
+    <!-- Select2 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="./manifest.json" />
+
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      href="./icons/icon-192x192.png"
+      sizes="192x192"
+    />
+
+    <!-- iOS meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="PWA Calendario" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <h1 class="nav-title">PWA</h1>
+        <ul class="nav-menu">
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./calendar.html">Calendario</a></li>
+          <li><a href="./form.html" class="active">Formulario</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="container">
+      <section class="form-section">
+        <form class="event-form" id="simpleForm">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Ingresa tu nombre"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="correo@ejemplo.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="categoria">Categoría:</label>
+            <select
+              id="categoria"
+              name="categoria"
+              class="select2-field"
+              style="width: 100%"
+            >
+              <option value="">Selecciona una categoría</option>
+              <option value="trabajo">Trabajo</option>
+              <option value="personal">Personal</option>
+              <option value="estudio">Estudio</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+
+    <!-- jQuery (requerido para Select2) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="./main.js"></script>
+
+    <!-- Inicializar Select2 -->
+    <script>
+      $(document).ready(function () {
+        $('.select2-field').select2({
+          placeholder: 'Selecciona una opción',
+          allowClear: true,
+        })
+      })
+    </script>
+  </body>
+</html>

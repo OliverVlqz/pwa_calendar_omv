@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Calendario - PWA Calendario" />
+    <meta name="theme-color" content="#000047" />
+    <title>Calendario - PWA Calendario</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./main.css" />
+
+    <!-- FullCalendar CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="./manifest.json" />
+
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      href="./icons/icon-192x192.png"
+      sizes="192x192"
+    />
+
+    <!-- iOS meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="PWA Calendario" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <h1 class="nav-title">PWA</h1>
+        <ul class="nav-menu">
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./calendar.html" class="active">Calendario</a></li>
+          <li><a href="./form.html">Formulario</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="container">
+      <section class="calendar-section">
+        <div id="calendar"></div>
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="./main.js"></script>
+
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+
+    <!-- Inicializar Calendario -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar')
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          locale: 'es',
+          headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay',
+          },
+          buttonText: {
+            today: 'Hoy',
+            month: 'Mes',
+            week: 'Semana',
+            day: 'Día',
+          },
+          events: [
+            {
+              title: 'Evento de ejemplo',
+              start: '2025-10-25',
+              color: '#1e90ff',
+            },
+          ],
+          height: 'auto',
+          eventColor: '#1e90ff',
+        })
+        calendar.render()
+      })
+    </script>
+  </body>
+</html>
