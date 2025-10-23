@@ -10,6 +10,8 @@ const APP_SHELL = [
   './form.html',
   './main.css',
   './main.js',
+  './icons/icon-192x192.png',
+  './icons/icon-512x512.png',
 ]
 
 // Instalación del Service Worker
